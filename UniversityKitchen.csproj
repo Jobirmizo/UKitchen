@@ -29,4 +29,8 @@
       <Compile Include="wwwroot\Controller\HomeController.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Features\" />
+    </ItemGroup>
+
 </Project>
