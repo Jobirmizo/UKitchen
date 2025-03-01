@@ -10,14 +10,18 @@
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
       <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
@@ -30,7 +34,31 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\" />
+      <None Include="wwwroot\css\Login.css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\Account\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Data\Identity\Pages\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Data\Identity\Pages\Account\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Data\Identity\Pages\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Data\Identity\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Data\Identity\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Auth\Pages\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Auth\Pages\Account\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Auth\Pages\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Auth\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Auth\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\Account\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_AuthLayout.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ViewStart.cshtml" />
     </ItemGroup>
 
 </Project>

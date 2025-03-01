@@ -5,9 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Identity;
+using UniversityKitchen.Data;
 using UniversityKitchen.Data.Context;
+using UniversityKitchen.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region JWT
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer(options =>
@@ -25,8 +30,24 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(
-    opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+#endregion
+#region DB
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("AppDbContextConnection")));
+
+builder.Services.AddDefaultIdentity<User>(options => 
+        options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>();
+#endregion
+
+#region Services
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+#endregion
 
 var app = builder.Build();
 
@@ -48,6 +69,7 @@ app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+app.MapRazorPages();
 
 
 app.Run();
