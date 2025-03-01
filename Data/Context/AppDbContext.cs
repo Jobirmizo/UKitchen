@@ -18,6 +18,7 @@ public class AppDbContext : IdentityDbContext<User>
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
+        
 
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
         optionsBuilder.UseNpgsql(config.GetConnectionString("AppDbContextConnection"));

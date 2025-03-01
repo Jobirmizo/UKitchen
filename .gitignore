@@ -6,6 +6,7 @@ shelf/
 
 rider.project.model.nuget.info
 rider.project.restore.info
+appsettings.json
 
 obj/
 bin/
