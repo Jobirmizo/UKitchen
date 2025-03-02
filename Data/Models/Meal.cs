@@ -10,5 +10,8 @@ namespace UniversityKitchen.Data.Models
         public int Quantity { get; set; }
         public bool Status { get; set; } = false;
         public MealCategoryEnum MealCategoryEnum{ get; set; }
+        
+        
+        
     }
 }
