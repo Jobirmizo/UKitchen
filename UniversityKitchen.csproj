@@ -30,14 +30,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="wwwroot\Controller\HomeController.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Include="wwwroot\css\Login.css" />
-    </ItemGroup>
-
-    <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\Account\Login.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\Account\_ViewImports.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml" />
@@ -59,6 +51,12 @@
       <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ValidationScriptsPartial.cshtml" />
       <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ViewImports.cshtml" />
       <_ContentIncludedByDefault Remove="Areas\Identitty\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Auth\Register.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Controllers\HomeController.cs" />
     </ItemGroup>
 
 </Project>

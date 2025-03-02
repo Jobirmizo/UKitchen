@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UniversityKitchen.Data.Context;
@@ -11,9 +12,11 @@ using UniversityKitchen.Data.Context;
 namespace UniversityKitchen.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250302180658_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace UniversityKitchen.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies", (string)null);
+                    b.ToTable("Companies");
                 });
 
             modelBuilder.Entity("UniversityKitchen.Data.Models.Meal", b =>
@@ -65,7 +68,7 @@ namespace UniversityKitchen.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Meals", (string)null);
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("UniversityKitchen.Data.Models.Order", b =>
@@ -97,7 +100,7 @@ namespace UniversityKitchen.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("UniversityKitchen.Data.Models.Product", b =>
@@ -146,7 +149,7 @@ namespace UniversityKitchen.Data.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("UniversityKitchen.Data.Models.User", b =>
@@ -194,7 +197,7 @@ namespace UniversityKitchen.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("UniversityKitchen.Data.Models.Order", b =>
