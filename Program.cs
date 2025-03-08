@@ -16,29 +16,13 @@ using UniversityKitchen.Features.Auth;
 var builder = WebApplication.CreateBuilder(args);
 
 #region JWT
-
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters= new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-            
-        };
-    });
 builder.Services.AddControllersWithViews();
 
 #endregion
 #region DB
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("AppDbContextConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Connection")));
 #endregion
 
 #region Services
@@ -47,7 +31,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddRazorPages();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-
 
 
 #endregion

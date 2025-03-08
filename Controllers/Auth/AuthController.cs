@@ -21,7 +21,7 @@ public class AuthController(IAuthService auth) : Controller
     {
         var success = await auth.Register(model);
         if (success)
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Auth");
 
         return View();
     }
@@ -29,7 +29,8 @@ public class AuthController(IAuthService auth) : Controller
     [HttpGet("login")]
     public IActionResult Login()
     {
-        return View();
+        var model = new LoginDto();
+        return View(model);
     }
 
     [HttpPost("login")]

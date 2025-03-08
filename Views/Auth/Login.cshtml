@@ -1,0 +1,28 @@
+@model UniversityKitchen.Features.Auth.Dtos.LoginDto
+
+@{
+    Layout = "_Auth";
+}
+
+<div class="col-lg-6 mb-5 mb-lg-0">
+    <div class="card">
+        <div class="card-body py-5 px-md-5">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+                <form asp-controller="Auth" asp-action="Login" method="post" class="col-md-12 mb-4 d-flex flex-column gap-4">
+                    <div data-mdb-input-init class="form-outline">
+                        <input asp-for="Username" type="text" id="form3Example2" class="form-control" placeholder="Username"/>
+                    </div>
+                    <div data-mdb-input-init class="form-outline">
+                        <input asp-for="Password" type="text" id="form3Example2" class="form-control" placeholder="Password"/>
+                    </div>
+                    <br/>
+                    <br/>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

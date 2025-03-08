@@ -1,4 +1,4 @@
-﻿namespace UniversityKitchen.Features.Auth;
+﻿namespace UniversityKitchen.Features.Auth.Dtos;
 
 public class LoginDto
 {
