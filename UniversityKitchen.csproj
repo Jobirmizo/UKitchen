@@ -59,9 +59,4 @@
       <Content Include="Controllers\HomeController.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Controllers\Product\" />
-      <Folder Include="Views\Product\" />
-    </ItemGroup>
-
 </Project>

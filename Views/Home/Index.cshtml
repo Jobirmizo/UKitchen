@@ -3,16 +3,19 @@
 }
 
 <div class="main_window d-flex w-100">
-    @await Html.PartialAsync("_Sidebar")
+    @* Sidebar faqat bir marta chaqiriladi *@
+    @await Html.PartialAsync("Sidebar")
+
     <div class="content_page w-100">
+        @* Navbar ham faqat bir marta bo‘lishi kerak *@
         <div class="navbar w-100 p-0 m-0">
-            @await Html.PartialAsync("_Navbar")
+            @await Html.PartialAsync("Navbar")
         </div>
+
         <div class="main_content">
-            <h1>hello</h1>
+            <div id="contentContainer">
+                <h1>Home page</h1>
+            </div>
         </div>
     </div>
 </div>
-
-
-

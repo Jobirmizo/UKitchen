@@ -1,4 +1,4 @@
-@{
+﻿@{
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
 }
 
@@ -9,12 +9,12 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a asp-controller="Home" asp-action="Index" class="nav-link @(currentController == "Home" ? "active" : "text-white")">
+            <a asp-controller="Home" asp-action="Index"  class="nav-link @(currentController == "Home" ? "active" : "text-white")">
                 Home
             </a>
         </li>
         <li>
-            <a asp-controller="Dashboard" asp-action="Index" class="nav-link @(currentController == "Dashboard" ? "active" : "text-white")">
+            <a asp-controller="Dashboard" asp-action="Index"  class="nav-link @(currentController == "Dashboard" ? "active" : "text-white")">
                 Dashboard
             </a>
         </li>
@@ -36,4 +36,18 @@
     </ul>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".nav-link").click(function (e) {
+            e.preventDefault(); // Sahifa qayta yuklanishining oldini oladi
 
+            var targetUrl = $(this).attr("href"); // URL ni olish
+            $("#contentContainer").load(targetUrl); // Sahifani yuklash
+
+            $(".nav-link").removeClass("active").addClass("text-white"); // Hammasidan active ni olib tashlash
+            $(this).addClass("active").removeClass("text-white"); // Faqat bosilganga berish
+        });
+    });
+
+</script>

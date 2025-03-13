@@ -1,19 +1,34 @@
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
-namespace UniversityKitchen.wwwroot.Controller;
-
-public class HomeController(ILogger<HomeController> logger) : Microsoft.AspNetCore.Mvc.Controller
+namespace UniversityKitchen.Controllers
 {
-    public IActionResult Index()
+    public class HomeController : Controller
     {
-        return View();
-    }
-    
-    public IActionResult Privacy()
-    {
-        return View();
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Home()
+        {
+            return PartialView("Home/HomeContent");
+        }
+
+        public IActionResult Dashboard()
+        {
+            return PartialView("Dashboard/DashboardContent");
+        }
     }
 }
