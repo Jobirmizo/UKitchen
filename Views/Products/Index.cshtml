@@ -1,27 +1,39 @@
-﻿@{
+﻿@model IEnumerable<UniversityKitchen.Data.Models.Product>
+
+
+
+
+@{
     ViewData["Title"] = "Products";
 }
 
 <h2>Products</h2>
 
-<table class="table">
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<a asp-action="Create" class="btn btn-success">Yangi mahsulot qo‘shish</a>
+
+<table class="table mt-3">
     <thead>
     <tr>
-        <th>#</th>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Actions</th>
+        <th>Nomi</th>
+        <th>Narxi</th>
+        <th>Miqdori</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>1</td>
-        <td>Example Product</td>
-        <td>$100</td>
-        <td>
-            <button class="btn btn-primary">Edit</button>
-            <button class="btn btn-danger">Delete</button>
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price.ToString("C")</td>
+            <td>@item.Quantity</td>
+        </tr>
+    }
     </tbody>
 </table>

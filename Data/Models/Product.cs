@@ -17,4 +17,5 @@ public class Product
     public DateTime Exparetion { get; set; }
     public Company Company { get; set; }
     public ProductCategoryEnum ProductCategoryEnum { get; set; } = new ProductCategoryEnum();
+    public decimal Price { get; set; }
 }

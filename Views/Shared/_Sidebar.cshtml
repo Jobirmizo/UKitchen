@@ -2,25 +2,35 @@
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
 }
 
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
+<div class="d-flex flex-column flex-shrink-0 p-4 text-white bg-dark sidebar">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span class="fs-4">Sidebar</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a asp-controller="Home" asp-action="Index" class="nav-link @(currentController == "Home" ? "active" : "text-white")">
+            <a asp-controller="Home" asp-action="Index"  class="nav-link @(currentController == "Home" ? "active" : "text-white")">
                 Home
             </a>
         </li>
         <li>
-            <a asp-controller="Dashboard" asp-action="Index" class="nav-link @(currentController == "Dashboard" ? "active" : "text-white")">
+            <a asp-controller="Dashboard" asp-action="Index"  class="nav-link @(currentController == "Dashboard" ? "active" : "text-white")">
                 Dashboard
             </a>
         </li>
         <li>
             <a asp-controller="Orders" asp-action="Index" class="nav-link @(currentController == "Orders" ? "active" : "text-white")">
                 Orders
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Menu" asp-action="Index" class="nav-link @(currentController == "Menu" ? "active" : "text-white")">
+                Menu
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Users" asp-action="Index" class="nav-link @(currentController == "Users" ? "active" : "text-white")">
+                Users
             </a>
         </li>
         <li>
@@ -36,4 +46,27 @@
     </ul>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".nav-link").click(function (e) {
+            e.preventDefault(); 
 
+            var targetUrl = $(this).attr("href"); 
+
+            if (targetUrl === "home.html" || targetUrl === "/") {
+                window.location.reload();
+                return;
+            }
+
+            $("#contentContainer").fadeOut(200, function () {
+                $(this).load(targetUrl, function () {
+                    $(this).fadeIn(200); 
+                });
+            });
+
+            $(".nav-link").removeClass("active text-white").addClass("text-white");
+            $(this).addClass("active").removeClass("text-white");
+        });
+    });
+</script>
