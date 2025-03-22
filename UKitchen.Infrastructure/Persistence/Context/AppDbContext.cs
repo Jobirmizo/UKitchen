@@ -1,7 +1,4 @@
-using System.IO;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using UniversityKitchen.Data.Models;
 
 namespace UniversityKitchen.Data.Context;
