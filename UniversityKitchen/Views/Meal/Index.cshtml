@@ -1,0 +1,70 @@
+﻿@using UniversityKitchen.Features.Meal
+@using UniversityKitchen.Features.Meal.Dto
+@model List<UniversityKitchen.Features.Meal.Dto.GetMealDto>
+@inject IMealService MealService;
+
+@{
+    Layout = "_Layout";
+    var meals = await MealService.GetAll();
+}
+
+
+@if (meals.Any())
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 w-100">
+        <div class="card w-50 h-10 p-1 m-4">
+            <div class="card-body p-0 m-0 d-flex gap-4">
+                <h3>Available meals:</h3>
+                <button class="btn btn-success rounded-3 px-4" type="button" data-bs-toggle="modal" data-bs-target="#importModal">
+                    Import
+                </button>
+                <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="post" enctype="multipart/form-data" asp-controller="Meal" asp-action="UploadFile">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="importModalLabel">Import Data</h5>
+                                    <button type="button" class="btn-close" d ata-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Upload your file here.</p>
+                                    <input type="file" id="fileInput" name="file" class="form-control" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex w-100 gap-3 p-4 m-0">
+            @foreach (var item in await MealService.GetAll())
+            {
+                <div class="card w-20 h-100 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">@item.Name</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-body-secondary">Quantity:@item.Quantity</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>    
+}
+else
+{
+    <h2>No meals available yet!!</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="@Url.Action("create", "Meal")" class="btn btn-primary">Create Meal</a>
+    </div>
+    
+}
+

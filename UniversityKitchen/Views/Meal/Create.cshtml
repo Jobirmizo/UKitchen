@@ -1,0 +1,39 @@
+﻿@using UniversityKitchen.Data.Enum
+@model UKitchen.Domain.Data.Dto.MealDto.CreateMealDto
+
+@{
+    Layout = "_Layout";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">   
+        @TempData["Success"]
+    </div>
+}
+
+<div class="d-flex flex-column align-items-center w-100">
+    <div class="card col-lg-4 border-1 p-4">
+        <div class="w-100 h-100">
+            <form asp-controller="Meal" asp-action="Create" method="post" class="d-flex flex-column gap-4">
+                <div data-mdb-input-init class="form-outline">
+                    <input asp-for="Name" type="text" id="form3Example1" class="form-control" placeholder="name"/>
+                </div>
+                <div class="form-outline">
+                    <input asp-for="Quantity" type="number" id="expirationDate" class="form-control" placeholder="Quantity"/>
+                </div>
+                <div data-mdb-input-init class="form-outline">
+                    <input asp-for="GivenPrice" type="number" id="form3Example1" class="form-control" placeholder="Give Price"/>
+                </div>
+                <select asp-for="MealCategoryEnum" class="form-control">
+                    @foreach (var meal in Enum.GetValues(typeof(MealCategoryEnum)).Cast<MealCategoryEnum>())
+                    {
+                        <option value="@((int)meal)">@meal</option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary mt-2">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+

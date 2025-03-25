@@ -1,0 +1,66 @@
+﻿@using UniversityKitchen.Features.Company
+@using UniversityKitchen.Features.Product
+@using UniversityKitchen.Features.Product.Dto
+@inject IProductService Project;
+
+
+@{
+    var products = new List<GetProductDto>();
+    
+        products = await Project.GetAll();
+
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+
+@(
+    Layout = "_Layout"
+)
+
+@if (products.Any())
+{
+    <h1>Products</h1>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="@Url.Action("create", "products")" class="btn btn-primary">Create Product</a>
+    </div>
+    
+    <table class="table mt-3">
+        <thead>
+        <tr>
+            <th>Nomi</th>
+            <th>Narxi</th>
+            <th>Miqdori</th>
+            <th>Liter</th>
+            <th>Exparetion</th>
+            <th>DelveredAt</th>
+            <th>IsExpired</th>
+            <th>TypeOf</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in products)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Liter</td>
+                <td>@item.Exparetion</td>
+                <td>@item.DelveredAt</td>
+                <td>@item.IsExpired</td>
+                <td>@item.IsExpired</td>
+                <td>@item.ProductCategory</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products available.</p> 
+    
+}

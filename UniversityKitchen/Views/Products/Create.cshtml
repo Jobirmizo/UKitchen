@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using UniversityKitchen.Data.Enum
+@using UniversityKitchen.Features.Company
+@model UniversityKitchen.Features.Product.Dto.CreateProduct
+@inject ICompanyService Company;
+
+@{
+    Layout = "_Layout";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">   
+        @TempData["Success"]
+    </div>
+}
+
+<h2>Create</h2>
+
+<form asp-controller="Products" asp-action="Create" method="post">
+    <div data-mdb-input-init class="form-outline">
+        <input asp-for="Name" type="text" id="form3Example1" class="form-control" placeholder="name"/>
+    </div>
+    <div class="form-outline">
+        <input asp-for="Exparetion" type="datetime-local" id="expirationDate" class="form-control" placeholder="Expiration date"/>
+    </div>
+    <div data-mdb-input-init class="form-outline">
+        <input asp-for="Quantity" type="number" id="form3Example1" class="form-control" placeholder="Quantity"/>
+    </div>
+    <div data-mdb-input-init class="form-outline">
+        <input asp-for="Weight" type="number" id="form3Example1" class="form-control" placeholder="Weight"/>
+    </div>
+    <div data-mdb-input-init class="form-outline">
+        <input asp-for="ActualPrice" type="number" id="form3Example1" class="form-control" placeholder="Actual price"/>
+    </div>
+    <div class="form-outline">
+        <input asp-for="DelveredAt" type="datetime-local" id="expirationDate" class="form-control" placeholder="Expiration date"/>
+    </div>
+    <div data-mdb-input-init class="form-outline">
+        <input asp-for="GivenPrice" type="number" id="form3Example1" class="form-control" placeholder="Given price"/>
+    </div>
+    <div class="dropdown">
+        <select asp-for="CompanyId" class="form-control">
+            @foreach (var company in await Company.GetAll())
+            {
+                <option value="@company.Id">@company.Name</option>
+            }
+        </select>
+    </div>
+    <div class="dropdown">
+        <select asp-for="ProductCategoryEnum" class="form-control">
+            @foreach (var category in Enum.GetValues(typeof(ProductCategoryEnum)).Cast<ProductCategoryEnum>())
+            {
+                <option value="@((int)category)">@category</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Create</button>
+</form>

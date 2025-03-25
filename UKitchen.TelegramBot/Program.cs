@@ -1,29 +1,30 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using Telegram.Bot;
+using Telegram.Bot.Polling;
+using UKitchen.TelegramBot.Features.MealService;
+using UKitchen.TelegramBot.Services;
+using UniversityKitchen.Data.Context;
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+var builder = WebApplication.CreateBuilder(args);
+var token= builder.Configuration.GetValue<string>("BotToken", string.Empty);
+
+builder.Services.AddOpenApi();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Connection")));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+builder.Services.AddScoped<IMealService, MealService>();
+builder.Services.AddSingleton(p => new TelegramBotClient(token));
+builder.Services.AddSingleton<IUpdateHandler, BotUpdateHandler>();
+builder.Services.AddHostedService<BotBackgroundService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+var supportedCultures = new[] { "uz-UZ", "en-US", "ru-RU" };
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
 
-app.UseHttpsRedirection();
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapStaticAssets();
-
-app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+app.UseRequestLocalization(localizationOptions);
 
 app.Run();

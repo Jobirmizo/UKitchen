@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UKitchen.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityKitchen", "UniversityKitchen\UniversityKitchen.csproj", "{23490431-58DA-4975-A6C1-155BB9ACE694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UKitchen.TelegramBot", "UKitchen.TelegramBot\UKitchen.TelegramBot.csproj", "{B51F5B98-0E9C-4551-A05C-EF3D48893575}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UKitchen.TelegramBot", "UKitchen.TelegramBot\UKitchen.TelegramBot.csproj", "{F6665E61-F24B-4E0B-BEF3-4A6A2E562FFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{23490431-58DA-4975-A6C1-155BB9ACE694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23490431-58DA-4975-A6C1-155BB9ACE694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23490431-58DA-4975-A6C1-155BB9ACE694}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B51F5B98-0E9C-4551-A05C-EF3D48893575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B51F5B98-0E9C-4551-A05C-EF3D48893575}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B51F5B98-0E9C-4551-A05C-EF3D48893575}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B51F5B98-0E9C-4551-A05C-EF3D48893575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6665E61-F24B-4E0B-BEF3-4A6A2E562FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6665E61-F24B-4E0B-BEF3-4A6A2E562FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6665E61-F24B-4E0B-BEF3-4A6A2E562FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6665E61-F24B-4E0B-BEF3-4A6A2E562FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

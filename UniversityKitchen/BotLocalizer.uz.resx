@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="Greeting" xml:space="preserve">
+    <value>👋 Salom! Servisimizga hush kelibsiz!</value>
+  </data>
+    <data name="ChooseLanguage" xml:space="preserve">
+    <value>🌍 Iltimos tilni tanlang:</value>
+  </data>
+</root>
