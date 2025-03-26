@@ -4,22 +4,18 @@
 
 
 @{
-    var products = new List<GetProductDto>();
-    
-        products = await Project.GetAll();
-
+    Layout = "_Layout";
+    var products = await Project.GetAll();
 }
+
 @if (TempData["Success"] != null)
 {
     <div class="alert alert-success">
         @TempData["Success"]
     </div>
+    
 }
 
-
-@(
-    Layout = "_Layout"
-)
 
 @if (products.Any())
 {

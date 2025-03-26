@@ -13,7 +13,8 @@ public class ProductsController(IProductService _product) : Controller
     [HttpGet("get-all")]
     public async Task<IActionResult> Index()
     {
-        return View(await _product.GetAll());
+        await _product.GetAll();
+        return View();
     }
     
     [HttpGet("create")] 

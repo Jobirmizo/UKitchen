@@ -11,7 +11,8 @@ public class MealController(IMealService _meal) : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        return View(await _meal.GetAll());
+        await _meal.GetAll();
+        return View();
     }
 
     [HttpGet("create")]
