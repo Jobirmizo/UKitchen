@@ -9,6 +9,7 @@ using UniversityKitchen.Features.Meal;
 using UniversityKitchen.Features.Product;
 using UniversityKitchen.Features.UrlGenerator;
 using UniversityKitchen.Features.ImportFile;
+using UniversityKitchen.Service;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,15 +28,15 @@ builder.Services.AddScoped<IMealService, MealService>();
 builder.Services.AddScoped<IExcelService, ExcelService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 builder.Services.AddScoped<IUrlGenerator, UrlGenerator>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddSingleton<IMinioService, MinioService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddRazorPages();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
 #endregion
 var app = builder.Build();
 app.UseMiddleware<ExeptionMiddleware>();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
