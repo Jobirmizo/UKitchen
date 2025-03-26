@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using UniversityKitchen.Data.Models;
+using UKitchen.Domain.Data.Models;
 
 namespace UniversityKitchen.Data.Context;
 

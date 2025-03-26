@@ -36,7 +36,7 @@ public partial class BotUpdateHandler
 
         await client.SendMessage(
             chatId: message.Chat.Id,
-            text: "Ty",
+            text: _localizer["greeting"],
             replyParameters: new ReplyParameters { MessageId = message.MessageId },
             cancellationToken: token
         );

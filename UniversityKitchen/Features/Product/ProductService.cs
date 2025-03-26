@@ -1,11 +1,8 @@
-using System.Xml;
 using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using UKitchen.Domain.Data.Dto.ProductDto;
+using UKitchen.Domain.Data.Enum;
 using UniversityKitchen.Data.Context;
-using UniversityKitchen.Data.Enum;
-using UniversityKitchen.Exception;
-using UniversityKitchen.Features.Product.Dto;
 
 namespace UniversityKitchen.Features.Product;
 
@@ -46,7 +43,7 @@ public class ProductService : IProductService
             view.Exparetion = DateTime.SpecifyKind(view.Exparetion, DateTimeKind.Utc);
             view.DelveredAt = DateTime.SpecifyKind(view.DelveredAt, DateTimeKind.Utc);
         
-            var mappedproduct = _mapper.Map<Data.Models.Product>(view);
+            var mappedproduct = _mapper.Map<UKitchen.Domain.Data.Models.Product>(view);
             
             await _context.AddAsync(mappedproduct);
             await _context.SaveChangesAsync();

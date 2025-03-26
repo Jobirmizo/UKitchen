@@ -1,4 +1,4 @@
-﻿using UniversityKitchen.Data.Enum;
+﻿using UKitchen.Domain.Data.Enum;
 
 namespace UKitchen.Domain.Data.Dto.MealDto;
 

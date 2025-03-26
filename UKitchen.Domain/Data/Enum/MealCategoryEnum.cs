@@ -1,4 +1,4 @@
-namespace UniversityKitchen.Data.Enum;
+namespace UKitchen.Domain.Data.Enum;
 
 public enum MealCategoryEnum
 {

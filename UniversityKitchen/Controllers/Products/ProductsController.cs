@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UniversityKitchen.Data.Context;
-using UniversityKitchen.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using UniversityKitchen.Exception;
+using UKitchen.Domain.Data.Dto.ProductDto;
 using UniversityKitchen.Features.Product;
-using UniversityKitchen.Features.Product.Dto;
 
 
 namespace UniversityKitchen.Controllers.Products;

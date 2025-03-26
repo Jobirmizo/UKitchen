@@ -1,6 +1,6 @@
-﻿using UniversityKitchen.Data.Enum;
+﻿using UKitchen.Domain.Data.Enum;
 
-namespace UniversityKitchen.Features.Meal.Dto
+namespace UKitchen.Domain.Data.Dto.MealDto
 {
     public class GetMealDto
     {

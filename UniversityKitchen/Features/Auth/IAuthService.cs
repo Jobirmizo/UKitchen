@@ -1,8 +1,6 @@
-using System.Threading.Tasks;
-using UniversityKitchen.Features.Auth;
-using UniversityKitchen.Features.Auth.Dtos;
+using UKitchen.Domain.Data.Dto.AuthDto;
 
-namespace UniversityKitchen.Features;
+namespace UniversityKitchen.Features.Auth;
 
 public interface IAuthService
 {

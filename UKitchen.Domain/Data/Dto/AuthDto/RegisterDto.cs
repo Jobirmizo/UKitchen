@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using UniversityKitchen.Data.Enum;
-
-namespace UniversityKitchen.Features.Auth.Dtos;
+namespace UKitchen.Domain.Data.Dto.AuthDto;
 
 public class RegisterDto
 {
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public string Firstname { get; set; }
-    public string Lastname { get; set; }
-    public string PhoneNumber { get; set; }
+    public string Username { get; set; }  = null!;
+    public string Password { get; set; }   = null!;
+    public string Firstname { get; set; }  = null!;
+    public string Lastname { get; set; }   = null!;
+    public string PhoneNumber { get; set; }   = null!;
     public string CountryCode { get; set; } = "+998";
 }

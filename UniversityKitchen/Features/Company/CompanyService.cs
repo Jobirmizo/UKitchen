@@ -1,7 +1,7 @@
-using System.Net.NetworkInformation;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
+using UKitchen.Domain.Data.Dto.CompanyDto;
 using UniversityKitchen.Data.Context;
 
 namespace UniversityKitchen.Features.Company;

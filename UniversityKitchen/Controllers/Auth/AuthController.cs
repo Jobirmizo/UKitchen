@@ -1,8 +1,7 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using UKitchen.Domain.Data.Dto.AuthDto;
 using UniversityKitchen.Features;
 using UniversityKitchen.Features.Auth;
-using UniversityKitchen.Features.Auth.Dtos;
 
 namespace UniversityKitchen.Controllers.Auth;
 

@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using UniversityKitchen.Data.Enum;
+﻿using UKitchen.Domain.Data.Enum;
 
-namespace UniversityKitchen.Data.Models
+namespace UKitchen.Domain.Data.Models
 {
     public class Meal
     {

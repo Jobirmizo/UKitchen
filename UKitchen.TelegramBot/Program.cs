@@ -18,10 +18,13 @@ builder.Services.AddSingleton(p => new TelegramBotClient(token));
 builder.Services.AddSingleton<IUpdateHandler, BotUpdateHandler>();
 builder.Services.AddHostedService<BotBackgroundService>();
 
+builder.Services.AddLocalization();
+
 var app = builder.Build();
 
 var supportedCultures = new[] { "uz-UZ", "en-US", "ru-RU" };
-var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 

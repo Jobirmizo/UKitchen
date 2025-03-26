@@ -1,6 +1,6 @@
 using AutoMapper;
 using UKitchen.Domain.Data.Dto.Telegram;
-using UniversityKitchen.Data.Models;
+using UKitchen.Domain.Data.Models;
 
 namespace UKitchen.TelegramBot.Features.MealService;
 

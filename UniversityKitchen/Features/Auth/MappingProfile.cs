@@ -1,9 +1,8 @@
 using AutoMapper;
-using UniversityKitchen.Data.Enum;
-using UniversityKitchen.Data.Models;
-using UniversityKitchen.Features.Auth.Dtos;
+using UKitchen.Domain.Data.Dto.AuthDto;
+using UKitchen.Domain.Data.Models;
 
-namespace UniversityKitchen.Features;
+namespace UniversityKitchen.Features.Auth;
 
 public class MappingProfile : Profile
 {

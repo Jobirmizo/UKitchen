@@ -1,4 +1,4 @@
-using UniversityKitchen.Features.Product.Dto;
+using UKitchen.Domain.Data.Dto.ProductDto;
 
 namespace UniversityKitchen.Features.Product;
 

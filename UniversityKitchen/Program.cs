@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using UniversityKitchen.Data.Context;
 using UniversityKitchen.Exception;
 using UniversityKitchen.Features;
+using UniversityKitchen.Features.Auth;
 using UniversityKitchen.Features.Company;
 using UniversityKitchen.Features.Meal;
 using UniversityKitchen.Features.Product;
 using UniversityKitchen.Features.UrlGenerator;
-using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using UniversityKitchen.Features.ImportFile;
 
 

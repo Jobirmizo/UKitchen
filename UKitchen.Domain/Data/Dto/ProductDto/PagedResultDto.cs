@@ -1,4 +1,4 @@
-﻿namespace UniversityKitchen.Features.Product.Dto;
+﻿namespace UKitchen.Domain.Data.Dto.ProductDto;
 
 public class PagedResultDto
 {

@@ -1,5 +1,3 @@
-using UniversityKitchen.Data.Enum;
-
 namespace UKitchen.Domain.Data.Dto.ExcelDto;
 
 public class MealExcelDto

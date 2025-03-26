@@ -2,7 +2,6 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using UKitchen.Domain.Data.Dto.Telegram;
 using UniversityKitchen.Data.Context;
-using UniversityKitchen.Data.Models;
 
 namespace UKitchen.TelegramBot.Features.MealService;
 

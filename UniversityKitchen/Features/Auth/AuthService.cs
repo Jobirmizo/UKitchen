@@ -1,20 +1,17 @@
-using System;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using UKitchen.Domain.Data.Dto.AuthDto;
+using UKitchen.Domain.Data.Enum;
+using UKitchen.Domain.Data.Models;
 using UniversityKitchen.Data.Context;
-using UniversityKitchen.Data.Enum;
-using UniversityKitchen.Data.Models;
 using UniversityKitchen.Exception;
-using UniversityKitchen.Features.Auth;
-using UniversityKitchen.Features.Auth.Dtos;
 
-namespace UniversityKitchen.Features;
+namespace UniversityKitchen.Features.Auth;
 
 public class AuthService(AppDbContext context, IMapper mapper) : IAuthService
 {
     
-    public async Task<bool> Login(LoginDto view)
+    public Task<bool> Login(LoginDto view)
     {
         throw new NotImplementedException();
     }
